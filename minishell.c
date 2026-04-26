@@ -298,3 +298,6 @@ int main(void) {
     }
     return 0;
 }
+
+git add minishell.c
+git commit -m "feat: document command parsing and execution flow"
