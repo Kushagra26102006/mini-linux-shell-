@@ -28,3 +28,7 @@ An interactive terminal simulation is available in the `web_ui/` directory for b
 
 ---
 *Built with C11, System Calls, and ANSI Power.*
+## Updates
+- Improved command parsing
+- Added better UI feedback
+- Cleaned project structure
