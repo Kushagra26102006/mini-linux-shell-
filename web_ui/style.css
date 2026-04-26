@@ -25,7 +25,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* Improved spacing and UI appearance */
+body {
+    padding: 10px;
+}
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
