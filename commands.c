@@ -1,3 +1,4 @@
+// Handles all built-in commands like ls, cd, mkdir, etc.
 #include "commands.h"
 
 extern char **environ;
