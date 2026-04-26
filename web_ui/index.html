@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Linux Shell | Hacker Terminal Simulation</title>
+    <meta name="description" content="A modern, professional web UI for the Mini Linux Shell project. Features a hacker-style terminal, smooth animations, and light/dark modes.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <nav>
+        <div class="logo">>_ Mini Linux Shell</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#implementation">Implementation</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#demo">Live Demo</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+            <a href="https://github.com" class="github-btn" target="_blank">View on GitHub</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="about">
+            <h1>Interactive Simulation</h1>
+            <p>Experience the power of a custom Linux shell through this modern terminal interface. Built for performance, designed for hackers.</p>
+        </section>
+
+        <section class="terminal-container" id="terminal-container">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+                <div class="terminal-title">guest@minishell: ~</div>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+                <!-- Terminal output injected via JavaScript -->
+            </div>
+            <div id="nano-editor" class="nano-container" style="display: none;">
+                <div class="nano-header">File: <span id="nano-filename"></span></div>
+                <textarea id="nano-textarea" class="nano-content" spellcheck="false"></textarea>
+                <div class="nano-footer">
+                    <div class="nano-shortcut"><span>^X</span> Exit</div>
+                    <div class="nano-shortcut"><span>^O</span> Save</div>
+                </div>
+            </div>
+            <input type="text" id="terminal-input" class="terminal-hidden-input" autofocus autocomplete="off" spellcheck="false">
+        </section>
+
+        <section class="content-section" id="features">
+            <h2>Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>30+ Commands</h3>
+                    <p>Native C implementations of common utilities like ls, cp, mv, rm, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Advanced Pipes</h3>
+                    <p>Support for multi-stage command pipelines using POSIX pipes and forks.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Redirection</h3>
+                    <p>Full support for input (<), output (>), and append (>>) redirection.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>UI/UX Polish</h3>
+                    <p>Colored prompts, command suggestions, and real-time status indicators.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="implementation">
+            <h2>Technical Implementation</h2>
+            <div class="impl-details">
+                <p>The shell is built using <strong>C11</strong> and leverages low-level Linux system calls:</p>
+                <ul>
+                    <li><code>fork()</code> & <code>execvp()</code> for process management.</li>
+                    <li><code>pipe()</code> & <code>dup2()</code> for I/O redirection and piping.</li>
+                    <li><code>waitpid()</code> for synchronized process execution.</li>
+                    <li>Custom <strong>Levenshtein Distance</strong> algorithm for typo suggestions.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
